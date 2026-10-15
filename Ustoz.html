@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nilufar Komilova - Sevimli Ustozimizga Bag'ishlanadi</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Caveat for handwritten notes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Canvas Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#FFFDF9',
+                        warmTeal: '#0E7490',
+                        lightTeal: '#ECFEFF',
+                        subtleGold: '#D97706',
+                        accentGold: '#F59E0B',
+                        softRose: '#FFF1F2',
+                        cardBg: 'rgba(255, 255, 255, 0.85)'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        handwriting: ['Caveat', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #FFFDF9;
+            background-image: radial-gradient(#e5e7eb 0.75px, transparent 0.75px);
+            background-size: 16px 16px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+        .envelope-shadow {
+            box-shadow: 0 10px 30px -5px rgba(14, 116, 144, 0.15);
+        }
+        .pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="text-slate-800 font-sans min-h-screen flex flex-col justify-between selection:bg-teal-100 selection:text-teal-900">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-40 glass-card border-b border-teal-100/50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-3.5 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-teal-600 to-amber-500 flex items-center justify-center text-white font-serif font-bold text-lg shadow-md">
+                    NK
+                </div>
+                <div>
+                    <h1 class="font-bold text-slate-800 text-base md:text-lg leading-tight">Nilufar Komilova</h1>
+                    <p class="text-xs text-teal-700 font-medium">243-maktab • 4-"A" sinf rahbari</p>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-600">
+                <a href="#about" class="hover:text-teal-600 transition">Ustozimiz</a>
+                <a href="#letter" class="hover:text-teal-600 transition">Dil izhori</a>
+                <a href="#schedule" class="hover:text-teal-600 transition">Dars jadvali</a>
+                <a href="#wall" class="hover:text-teal-600 transition">Tilaklar devori</a>
+                <a href="#quiz" class="hover:text-teal-600 transition">Viktorina</a>
+            </nav>
+
+            <button onclick="triggerConfetti()" class="bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 text-white text-xs md:text-sm font-medium px-4 py-2 rounded-full shadow-md hover:shadow-lg transition flex items-center gap-2 transform active:scale-95">
+                <i class="fa-solid fa-heart text-rose-300"></i>
+                <span>Rahmat aytish</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section id="about" class="max-w-6xl mx-auto px-4 pt-8 pb-12 md:py-16">
+            <div class="relative rounded-3xl bg-gradient-to-br from-teal-800 via-teal-700 to-slate-800 text-white p-6 md:p-12 shadow-2xl overflow-hidden">
+                <!-- Background Decorative Patterns -->
+                <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-amber-500/20 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -left-10 -top-10 w-64 h-64 bg-teal-400/20 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="relative z-10 grid md:grid-cols-12 gap-8 items-center">
+                    <div class="md:col-span-8 space-y-5 text-center md:text-left">
+                        <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full text-xs font-medium text-amber-200 border border-white/20">
+                            <i class="fa-solid fa-award text-amber-400"></i>
+                            <span>Toshkent shahri, Olmazor tumani 243-maktab</span>
+                        </div>
+
+                        <h2 class="text-2xl md:text-4xl lg:text-5xl font-serif font-bold leading-tight tracking-wide text-amber-50">
+                            4-"A" sinf rahbarimiz <br>
+                            <span class="text-amber-300 underline decoration-amber-400/50 underline-offset-8">Nilufar Komilova</span> ustozimizga bag'ishlanadi!
+                        </h2>
+
+                        <p class="text-slate-200 text-sm md:text-base max-w-2xl leading-relaxed font-light">
+                            Bizga ilm yo'lini yoritib, mehr va sabr bilan ta'lim-tarbiya berayotgan qadrli va sevimli ustozimizga Ibrohim va 4-"A" sinf o'quvchilari hamda ota-onalari nomidan cheksiz minnatdorchilik izhor etamiz.
+                        </p>
+
+                        <div class="pt-2 flex flex-wrap gap-3 justify-center md:justify-start">
+                            <button onclick="openLetterModal()" class="bg-amber-400 hover:bg-amber-300 text-slate-900 font-semibold px-6 py-3 rounded-xl shadow-lg transition transform hover:-translate-y-0.5 flex items-center gap-2 text-sm">
+                                <i class="fa-solid fa-envelope-open text-teal-900"></i>
+                                <span>Ustozga Dil Izhori Maktubi</span>
+                            </button>
+                            <a href="#wall" class="bg-white/15 hover:bg-white/25 text-white font-medium px-5 py-3 rounded-xl backdrop-blur-md transition border border-white/20 text-sm flex items-center gap-2">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                                <span>Tilak Qoldirish</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-4 flex justify-center">
+                        <div class="relative floating">
+                            <div class="w-48 h-48 md:w-60 md:h-60 rounded-2xl bg-gradient-to-tr from-amber-200 to-teal-100 p-2 shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-300">
+                                <div class="w-full h-full rounded-xl bg-teal-900/40 border-2 border-dashed border-amber-300/60 flex flex-col items-center justify-center text-center p-4">
+                                    <div class="w-20 h-20 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-4xl mb-3 text-amber-300">
+                                        <i class="fa-solid fa-graduation-cap"></i>
+                                    </div>
+                                    <h3 class="font-serif font-bold text-amber-100 text-lg">Nilufar Komilova</h3>
+                                    <p class="text-xs text-teal-200 mt-1">4-"A" Sinf Rahbari</p>
+                                    <div class="mt-3 flex gap-1 text-amber-300 text-xs">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="absolute -bottom-3 -right-3 bg-white text-slate-800 px-3 py-1.5 rounded-lg shadow-lg font-handwriting text-xl border border-amber-200 text-teal-800 rotate-6">
+                                ✨ Sevimli Ustoz!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Letter Card Section -->
+        <section id="letter" class="max-w-4xl mx-auto px-4 py-10">
+            <div class="text-center mb-8">
+                <span class="text-xs uppercase tracking-widest font-bold text-teal-700 bg-teal-50 px-3 py-1 rounded-full border border-teal-200">Chin Yurakdan</span>
+                <h3 class="text-2xl md:text-3xl font-serif font-bold text-slate-800 mt-2">Ustozimizga Tashakkurnoma</h3>
+                <p class="text-xs md:text-sm text-slate-500 mt-1">Xat ustiga bosing va minnatdorchilik maktubini o'qing</p>
+            </div>
+
+            <!-- Card Flip Container -->
+            <div onclick="openLetterModal()" class="cursor-pointer group relative rounded-2xl bg-gradient-to-r from-amber-50 via-orange-50 to-teal-50 p-6 md:p-10 border border-amber-200/80 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="flex items-center gap-5">
+                        <div class="w-16 h-16 rounded-full bg-amber-500/10 border border-amber-300 flex items-center justify-center text-amber-600 text-2xl group-hover:scale-110 transition">
+                            <i class="fa-solid fa-envelope-open-text"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-serif font-bold text-slate-800 text-lg group-hover:text-teal-700 transition">4-"A" Sinf O'quvchilari Nomidan Maktub</h4>
+                            <p class="text-xs md:text-sm text-slate-600 mt-1">"Barcha bergan saboqlaringiz, cheksiz mehr-muhabbat va e'tiboringiz uchun..."</p>
+                        </div>
+                    </div>
+                    <span class="inline-flex items-center gap-2 text-xs font-semibold text-teal-700 bg-white px-4 py-2 rounded-full border border-teal-200 shadow-sm group-hover:bg-teal-700 group-hover:text-white transition">
+                        <span>Maktubni ochish</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Class & Schedule Section -->
+        <section id="schedule" class="max-w-6xl mx-auto px-4 py-12">
+            <div class="text-center mb-10">
+                <span class="text-xs uppercase tracking-widest font-bold text-amber-700 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Maktab Hayoti</span>
+                <h3 class="text-2xl md:text-3xl font-serif font-bold text-slate-800 mt-2">Dars Jadvali va Sinf Ma'lumotlari</h3>
+                <p class="text-xs md:text-sm text-slate-500 mt-1">4-"A" sinfining kunlik mashg'ulotlar jadvali</p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="glass-card rounded-2xl p-4 md:p-6 shadow-xl border border-teal-100">
+                <div class="flex flex-wrap justify-center gap-2 mb-6 border-b border-slate-200 pb-4" id="day-tabs">
+                    <button onclick="switchTab('dushanba')" id="tab-dushanba" class="tab-btn active-tab px-4 py-2 rounded-xl text-xs md:text-sm font-semibold transition bg-teal-700 text-white shadow-md">Dushanba</button>
+                    <button onclick="switchTab('seshanba')" id="tab-seshanba" class="tab-btn px-4 py-2 rounded-xl text-xs md:text-sm font-semibold transition bg-slate-100 text-slate-600 hover:bg-slate-200">Seshanba</button>
+                    <button onclick="switchTab('chorshanba')" id="tab-chorshanba" class="tab-btn px-4 py-2 rounded-xl text-xs md:text-sm font-semibold transition bg-slate-100 text-slate-600 hover:bg-slate-200">Chorshanba</button>
+                    <button onclick="switchTab('payshanba')" id="tab-payshanba" class="tab-btn px-4 py-2 rounded-xl text-xs md:text-sm font-semibold transition bg-slate-100 text-slate-600 hover:bg-slate-200">Payshanba</button>
+                    <button onclick="switchTab('juma')" id="tab-juma" class="tab-btn px-4 py-2 rounded-xl text-xs md:text-sm font-semibold transition bg-slate-100 text-slate-600 hover:bg-slate-200">Juma</button>
+                </div>
+
+                <!-- Schedule Display -->
+                <div id="schedule-content" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <!-- Dynamic rendering via JS -->
+                </div>
+
+                <!-- Class Info Banner Footer -->
+                <div class="mt-8 bg-gradient-to-r from-teal-50 to-amber-50 rounded-xl p-4 border border-teal-100/80 flex flex-wrap items-center justify-between gap-4 text-xs md:text-sm text-slate-700">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-school text-teal-700 text-lg"></i>
+                        <span><strong>Sinf:</strong> 4-"A" sinf ( Olmazor tumani 243-maktab )</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-user-tie text-amber-700 text-lg"></i>
+                        <span><strong>Sinf Rahbari:</strong> Nilufar Komilova</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Highlights & Class Memories Placeholder -->
+        <section class="max-w-6xl mx-auto px-4 py-10">
+            <div class="text-center mb-8">
+                <span class="text-xs uppercase tracking-widest font-bold text-teal-700 bg-teal-50 px-3 py-1 rounded-full border border-teal-200">Fotolavhalar</span>
+                <h3 class="text-2xl md:text-3xl font-serif font-bold text-slate-800 mt-2">Sinfimiz Xotiralari</h3>
+                <p class="text-xs md:text-sm text-slate-500 mt-1">Unutilmas lahzalar va baxtli onlar</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Memory Card 1 -->
+                <div class="glass-card rounded-2xl p-4 border border-amber-100 shadow-md hover:shadow-xl transition group">
+                    <div class="h-44 bg-gradient-to-br from-amber-100 via-orange-100 to-teal-100 rounded-xl flex flex-col items-center justify-center text-center p-4 border border-amber-200/50 group-hover:scale-[1.02] transition">
+                        <div class="w-12 h-12 rounded-full bg-white/80 flex items-center justify-center text-amber-600 text-xl shadow-sm mb-2">
+                            <i class="fa-solid fa-book-open-reader"></i>
+                        </div>
+                        <h4 class="font-serif font-bold text-slate-800">Bilimlar Kuni</h4>
+                        <p class="text-xs text-slate-500 mt-1">Yangi o'quv yilining fayzli boshlanishi</p>
+                    </div>
+                    <p class="text-xs text-slate-600 mt-3 font-medium text-center">"Har bir dars - yangi kashfiyot!"</p>
+                </div>
+
+                <!-- Memory Card 2 -->
+                <div class="glass-card rounded-2xl p-4 border border-teal-100 shadow-md hover:shadow-xl transition group">
+                    <div class="h-44 bg-gradient-to-br from-teal-100 via-cyan-100 to-blue-100 rounded-xl flex flex-col items-center justify-center text-center p-4 border border-teal-200/50 group-hover:scale-[1.02] transition">
+                        <div class="w-12 h-12 rounded-full bg-white/80 flex items-center justify-center text-teal-700 text-xl shadow-sm mb-2">
+                            <i class="fa-solid fa-heart-circle-check"></i>
+                        </div>
+                        <h4 class="font-serif font-bold text-slate-800">Ustoz va Murabbiylar Kuni</h4>
+                        <p class="text-xs text-slate-500 mt-1">Nilufar ustozimizga bo'lgan ehtirom</p>
+                    </div>
+                    <p class="text-xs text-slate-600 mt-3 font-medium text-center">"Mehr bilan sug'orilgan ta'lim"</p>
+                </div>
+
+                <!-- Memory Card 3 -->
+                <div class="glass-card rounded-2xl p-4 border border-rose-100 shadow-md hover:shadow-xl transition group">
+                    <div class="h-44 bg-gradient-to-br from-rose-100 via-pink-100 to-amber-100 rounded-xl flex flex-col items-center justify-center text-center p-4 border border-rose-200/50 group-hover:scale-[1.02] transition">
+                        <div class="w-12 h-12 rounded-full bg-white/80 flex items-center justify-center text-rose-600 text-xl shadow-sm mb-2">
+                            <i class="fa-solid fa-champagne-glasses"></i>
+                        </div>
+                        <h4 class="font-serif font-bold text-slate-800">Sinf Bayramlari</h4>
+                        <p class="text-xs text-slate-500 mt-1">Ahillik va dostlik damlari</p>
+                    </div>
+                    <p class="text-xs text-slate-600 mt-3 font-medium text-center">"Bir oiladay ahil 4-'A' sinfi"</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Gratitude Wall / Note Pad -->
+        <section id="wall" class="max-w-6xl mx-auto px-4 py-12">
+            <div class="text-center mb-10">
+                <span class="text-xs uppercase tracking-widest font-bold text-teal-700 bg-teal-50 px-3 py-1 rounded-full border border-teal-200">Minnatdorchilik Devori</span>
+                <h3 class="text-2xl md:text-3xl font-serif font-bold text-slate-800 mt-2">Nilufar Ustozimizga Izhorlar</h3>
+                <p class="text-xs md:text-sm text-slate-500 mt-1">O'quvchilar va ota-onalar tomonidan qoldirilgan eng samimiy tilaklar</p>
+            </div>
+
+            <div class="grid md:grid-cols-12 gap-8">
+                <!-- Form to Add Note -->
+                <div class="md:col-span-5">
+                    <div class="glass-card rounded-2xl p-6 shadow-xl border border-amber-200/80 sticky top-24">
+                        <h4 class="font-serif font-bold text-slate-800 text-lg mb-1">O'z tilagingizni qoldiring</h4>
+                        <p class="text-xs text-slate-500 mb-4">Nilufar ustozimizga raxmat so'zlarini yozing</p>
+
+                        <form id="note-form" onsubmit="saveNote(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Ismingiz / Familiyangiz</label>
+                                <input type="text" id="note-author" required placeholder="Masalan: Ibrohim / Ota-ona" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-600 text-sm">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Qaysi roldasiz?</label>
+                                <select id="note-role" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-600 text-sm bg-white">
+                                    <option value="O'quvchi">O'quvchi</option>
+                                    <option value="Ota-ona">Ota-ona</option>
+                                    <option value="Bitiruvchi">Sinf Dos'ti</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Dil izhoringiz</label>
+                                <textarea id="note-message" required rows="4" placeholder="Nilufar ustoz, mehnatlaringiz uchun rahmat..." class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-teal-600 text-sm resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 text-white font-medium py-2.5 rounded-xl shadow-md transition flex items-center justify-center gap-2 text-sm">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Devorga joylash</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Notes Wall Board -->
+                <div class="md:col-span-7">
+                    <div id="notes-container" class="grid sm:grid-cols-2 gap-4 max-h-[600px] overflow-y-auto pr-1">
+                        <!-- Dynamic Notes loaded from localStorage -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Quiz Game -->
+        <section id="quiz" class="max-w-4xl mx-auto px-4 py-12">
+            <div class="text-center mb-8">
+                <span class="text-xs uppercase tracking-widest font-bold text-amber-700 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">Ko'ngilochar Viktorina</span>
+                <h3 class="text-2xl md:text-3xl font-serif font-bold text-slate-800 mt-2">"Bilimdon O'quvchi" Testi</h3>
+                <p class="text-xs md:text-sm text-slate-500 mt-1">4-"A" sinf darslari va maktab bilimlari bo'yicha kichik viktorina</p>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 md:p-8 shadow-xl border border-teal-100 relative overflow-hidden" id="quiz-card">
+                <div id="quiz-body">
+                    <!-- Dynamic Question Rendering -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 border-t border-slate-800 py-10">
+        <div class="max-w-6xl mx-auto px-4 text-center space-y-4">
+            <div class="flex items-center justify-center gap-2 text-amber-400 text-lg font-serif font-bold">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Nilufar Komilova Ustozimizga Cheksiz Ehtirom Bilan</span>
+            </div>
+            <p class="text-xs md:text-sm text-slate-400 max-w-xl mx-auto">
+                Toshkent shahri Olmazor tumani 243-maktab 4-"A" sinfining barcha o'quvchilari va ota-onalari nomidan ustozimizga mustahkam sog'liq, oilaviy baxt va sharafli kasblarida ulkan zafarlar tilaymiz!
+            </p>
+            <div class="text-xs text-slate-500 border-t border-slate-800 pt-6">
+                © 2026 • 4-"A" Sinf Minnatdorchilik Sayti
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Letter / Interactive Appreciation Letter -->
+    <div id="letter-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 md:p-8 shadow-2xl border border-amber-200 relative animate-fade-in max-h-[90vh] overflow-y-auto">
+            <button onclick="closeLetterModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center border-b border-amber-100 pb-4 mb-6">
+                <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center mx-auto mb-2 text-xl">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <h3 class="font-serif font-bold text-2xl text-slate-800">Qadrli Nilufar Komilova Ustoz!</h3>
+                <p class="text-xs text-teal-700 font-semibold mt-0.5">4-"A" sinf o'quvchilarining samimiy maktubi</p>
+            </div>
+
+            <div class="space-y-4 font-sans text-sm text-slate-700 leading-relaxed">
+                <p class="first-letter:text-3xl first-letter:font-serif first-letter:font-bold first-letter:text-amber-600">
+                    Siz bizning birinchi qadamlarimizda yo'limizni yoritgan, har bir harf va raqam ortidagi bilim dunyosini ochib bergan eng mehribon ustozimizsiz.
+                </p>
+                <p>
+                    Har kuni maktabga kelganimizda sizning tabassumingiz, samimiy so'zlaringiz va cheksiz sabringiz bizga kuch va ishonch bag'ishlaydi. Bizga nafaqat darslikdagi bilimlarni, balki to'g'ri so'zlik, do'stlik va mehribonlik kabi insoniy fazilatlarni ham o'rgatdingiz.
+                </p>
+                <p>
+                    Biz – 4-"A" sinf o'quvchilari, siz bilan g'ururlanamiz! Mashaqqatli va sharafli mehnatingiz uchun sizga chin kalbimizdan tashakkur bildiramiz.
+                </p>
+            </div>
+
+            <div class="mt-8 pt-4 border-t border-amber-100 flex items-center justify-between">
+                <div>
+                    <p class="font-handwriting text-2xl text-amber-700">Cheksiz ehtirom ila,</p>
+                    <p class="text-xs font-bold text-slate-800">Ibrohim & 4-"A" sinf jamoasi</p>
+                </div>
+                <button onclick="triggerConfetti(); closeLetterModal();" class="bg-teal-700 hover:bg-teal-800 text-white text-xs md:text-sm font-semibold px-5 py-2.5 rounded-xl shadow-md transition">
+                    🌸 Qarsaklar va Gullar!
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // --- 1. Schedule Data ---
+        const scheduleData = {
+            dushanba: [
+                { time: "08:00 - 08:45", subject: "Kelajak soati", teacher: "Komilova N.A.", icon: "fa-compass" },
+                { time: "08:50 - 09:35", subject: "Matematika", teacher: "Komilova N.A.", icon: "fa-calculator" },
+                { time: "09:40 - 10:25", subject: "Ona tili", teacher: "Komilova N.A.", icon: "fa-pen-nib" },
+                { time: "10:40 - 11:25", subject: "Tabiiy fanlar", teacher: "Komilova N.A.", icon: "fa-seedling" },
+                { time: "11:30 - 12:15", subject: "Chet tili", teacher: "Abdukadirova G. / Shamsuddinova N.", icon: "fa-language" }
+            ],
+            seshanba: [
+                { time: "08:00 - 08:45", subject: "Matematika", teacher: "Komilova N.A.", icon: "fa-calculator" },
+                { time: "08:50 - 09:35", subject: "Ona tili", teacher: "Komilova N.A.", icon: "fa-pen-nib" },
+                { time: "09:40 - 10:25", subject: "O'qish savodxonligi", teacher: "Komilova N.A.", icon: "fa-book-open" },
+                { time: "10:40 - 11:25", subject: "Tasviriy san'at", teacher: "Komilova N.A.", icon: "fa-palette" },
+                { time: "11:30 - 12:15", subject: "Rus tili (n)", teacher: "Akramova Z.S. / Nizomov S.D.", icon: "fa-comments" }
+            ],
+            chorshanba: [
+                { time: "08:00 - 08:45", subject: "Matematika", teacher: "Komilova N.A.", icon: "fa-calculator" },
+                { time: "08:50 - 09:35", subject: "Ona tili", teacher: "Komilova N.A.", icon: "fa-pen-nib" },
+                { time: "09:40 - 10:25", subject: "O'qish savodxonligi", teacher: "Komilova N.A.", icon: "fa-book-open" },
+                { time: "10:40 - 11:25", subject: "Chet tili", teacher: "Abdukadirova G. / Shamsuddinova N.", icon: "fa-language" },
+                { time: "11:30 - 12:15", subject: "Jismoniy tarbiya", teacher: "Komilova N.A.", icon: "fa-volleyball" }
+            ],
+            payshanba: [
+                { time: "08:00 - 08:45", subject: "Matematika", teacher: "Komilova N.A.", icon: "fa-calculator" },
+                { time: "08:50 - 09:35", subject: "Musiqa", teacher: "Abdukarimova S.", icon: "fa-music" },
+                { time: "09:40 - 10:25", subject: "O'qish savodxonligi", teacher: "Komilova N.A.", icon: "fa-book-open" },
+                { time: "10:40 - 11:25", subject: "Rus tili (n)", teacher: "Akramova Z.S. / Nizomov S.D.", icon: "fa-comments" },
+                { time: "11:30 - 12:15", subject: "Tarbiya", teacher: "Komilova N.A.", icon: "fa-heart" }
+            ],
+            juma: [
+                { time: "08:00 - 08:45", subject: "Matematika", teacher: "Komilova N.A.", icon: "fa-calculator" },
+                { time: "08:50 - 09:35", subject: "Ona tili", teacher: "Komilova N.A.", icon: "fa-pen-nib" },
+                { time: "09:40 - 10:25", subject: "Informatika", teacher: "Komilova N.A.", icon: "fa-laptop-code" },
+                { time: "10:40 - 11:25", subject: "Texnologiya", teacher: "Komilova N.A.", icon: "fa-scissors" },
+                { time: "11:30 - 12:15", subject: "Jismoniy tarbiya", teacher: "Komilova N.A.", icon: "fa-person-running" }
+            ]
+        };
+
+        function switchTab(day) {
+            // Update active tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-teal-700', 'text-white', 'shadow-md');
+                btn.classList.add('bg-slate-100', 'text-slate-600');
+            });
+            const activeBtn = document.getElementById(`tab-${day}`);
+            activeBtn.classList.remove('bg-slate-100', 'text-slate-600');
+            activeBtn.classList.add('bg-teal-700', 'text-white', 'shadow-md');
+
+            // Render schedule
+            const container = document.getElementById('schedule-content');
+            const items = scheduleData[day] || [];
+
+            container.innerHTML = items.map((item, index) => `
+                <div class="bg-white rounded-xl p-4 border border-slate-100 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold text-teal-800 bg-teal-50 px-2.5 py-1 rounded-md border border-teal-100">
+                            ${index + 1}-soat
+                        </span>
+                        <span class="text-xs text-slate-500 font-medium">${item.time}</span>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <i class="fa-solid ${item.icon} text-amber-500 text-sm"></i>
+                            <h5 class="font-semibold text-slate-800 text-sm">${item.subject}</h5>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-1"><i class="fa-solid fa-user-tie text-slate-400 mr-1"></i>${item.teacher}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // --- 2. Interactive Letter Modal ---
+        function openLetterModal() {
+            document.getElementById('letter-modal').classList.remove('hidden');
+        }
+
+        function closeLetterModal() {
+            document.getElementById('letter-modal').classList.add('hidden');
+        }
+
+        // --- 3. Confetti Animation ---
+        function triggerConfetti() {
+            if (typeof confetti === 'function') {
+                confetti({
+                    particleCount: 80,
+                    spread: 70,
+                    origin: { y: 0.6 }
+                });
+            }
+        }
+
+        // --- 4. Gratitude Wall (LocalStorage) ---
+        const defaultNotes = [
+            { author: "Ibrohim", role: "O'quvchi", message: "Nilufar ustoz, bizga sabr bilan matematika va ona tilini o'rgatganingiz uchun kotta rahmat! Siz dunyodagi eng yaxshi ustozsiz!", date: "Bugun" },
+            { author: "Madinabonu onasi", role: "Ota-ona", message: "Nilufar xonim, farzandlarimizga ko'rsatayotgan mehringiz va e'tiboringiz uchun ota-onalar nomidan tazzimdamiz!", date: "Kechun" },
+            { author: "Ibrohim", role: "O'quvchi", message: "Sinfimizdagi har bir qiziqarli dars va bayramlar uchun rahmat ustoz!", date: "Kechun" }
+        ];
+
+        function getNotes() {
+            const stored = localStorage.getItem('nilufar_teacher_notes');
+            if (!stored) {
+                localStorage.setItem('nilufar_teacher_notes', JSON.stringify(defaultNotes));
+                return defaultNotes;
+            }
+            const parsed = JSON.parse(stored);
+            // Update old default notes if they contain previous sample names
+            const updated = parsed.map(note => {
+                if (note.author === "Azizbek" || note.author === "Shahzod") {
+                    return { ...note, author: "Ibrohim" };
+                }
+                return note;
+            });
+            return updated;
+        }
+
+        function renderNotes() {
+            const container = document.getElementById('notes-container');
+            const notes = getNotes();
+
+            container.innerHTML = notes.map((note) => `
+                <div class="bg-white/90 rounded-2xl p-4 shadow-sm border border-amber-100/80 flex flex-col justify-between">
+                    <p class="font-handwriting text-lg text-slate-800 leading-snug mb-3">"${note.message}"</p>
+                    <div class="flex items-center justify-between border-t border-slate-100 pt-2 text-xs">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-6 h-6 rounded-full bg-teal-100 text-teal-800 flex items-center justify-center font-bold text-[10px]">
+                                ${note.author.charAt(0)}
+                            </span>
+                            <span class="font-semibold text-slate-700">${note.author}</span>
+                        </div>
+                        <span class="text-[11px] text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200/60">${note.role}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function saveNote(e) {
+            e.preventDefault();
+            const author = document.getElementById('note-author').value.trim();
+            const role = document.getElementById('note-role').value;
+            const message = document.getElementById('note-message').value.trim();
+
+            if (!author || !message) return;
+
+            const notes = getNotes();
+            notes.unshift({ author, role, message, date: "Hozircha" });
+            localStorage.setItem('nilufar_teacher_notes', JSON.stringify(notes));
+
+            document.getElementById('note-form').reset();
+            renderNotes();
+            triggerConfetti();
+        }
+
+        // --- 5. Interactive Quiz Game ---
+        const quizQuestions = [
+            {
+                question: "Nilufar Komilova qaysi maktab va sinf rahbari hisoblanadi?",
+                options: ["243-maktab 4-'A' sinf", "100-maktab 3-'B' sinf", "243-maktab 5-'A' sinf"],
+                answer: 0
+            },
+            {
+                question: "O'quvchiga bilim beruvchi va uni to'g'ri yo'lga boshlovchi buyuk inson kim?",
+                options: ["Muhandis", "Ustoz", "Shifokor"],
+                answer: 1
+            },
+            {
+                question: "4-'A' sinfimiz qaysi tumanda joylashgan?",
+                options: ["Yunusobod tumani", "Chilonzor tumani", "Olmazor tumani"],
+                answer: 2
+            }
+        ];
+
+        let currentQ = 0;
+        let score = 0;
+
+        function renderQuiz() {
+            const container = document.getElementById('quiz-body');
+
+            if (currentQ >= quizQuestions.length) {
+                container.innerHTML = `
+                    <div class="text-center py-8">
+                        <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto text-3xl mb-3">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <h4 class="font-serif font-bold text-2xl text-slate-800">Ofarin, Bilimdon!</h4>
+                        <p class="text-sm text-slate-600 mt-1">Siz ${quizQuestions.length} ta savoldan ${score} tasiga to'g'ri javob berdingiz!</p>
+                        <div class="mt-6">
+                            <button onclick="restartQuiz()" class="bg-teal-700 hover:bg-teal-800 text-white font-medium px-6 py-2.5 rounded-xl shadow-md transition text-sm">
+                                Qayta urinib ko'rish
+                            </button>
+                        </div>
+                    </div>
+                `;
+                triggerConfetti();
+                return;
+            }
+
+            const q = quizQuestions[currentQ];
+            container.innerHTML = `
+                <div>
+                    <div class="flex items-center justify-between text-xs text-slate-500 font-semibold mb-3">
+                        <span>Savol ${currentQ + 1} / ${quizQuestions.length}</span>
+                        <span>Ball: ${score}</span>
+                    </div>
+                    <h4 class="font-serif font-bold text-lg text-slate-800 mb-4">${q.question}</h4>
+                    <div class="space-y-2.5">
+                        ${q.options.map((opt, i) => `
+                            <button onclick="checkAnswer(${i})" class="w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-teal-600 hover:bg-teal-50/50 text-sm font-medium text-slate-700 transition flex items-center justify-between group">
+                                <span>${opt}</span>
+                                <i class="fa-solid fa-chevron-right text-slate-300 group-hover:text-teal-600 transition text-xs"></i>
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function checkAnswer(idx) {
+            if (idx === quizQuestions[currentQ].answer) {
+                score++;
+            }
+            currentQ++;
+            renderQuiz();
+        }
+
+        function restartQuiz() {
+            currentQ = 0;
+            score = 0;
+            renderQuiz();
+        }
+
+        // --- Init on load ---
+        window.onload = function() {
+            switchTab('dushanba');
+            renderNotes();
+            renderQuiz();
+        };
+    </script>
+</body>
+</html>
